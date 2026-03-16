@@ -607,7 +607,7 @@ function drawStars() {
 }
 
 function maybeShootingStar() {
-  if (Math.random() < 0.0012 && shootingStars.length < 1) {
+  if (Math.random() < 0.006 && shootingStars.length < 2) {
     shootingStars.push({
       x: Math.random() * W * 0.35 + W * 0.4,
       y: Math.random() * H * 0.18 + H * 0.08,

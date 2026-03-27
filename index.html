@@ -364,10 +364,12 @@
      BELOW-THE-FOLD CONTENT
      ══════════════════════════════════════════ */
 
-  /* ── sticky nav ── */
+  /* ── nav (fixed, overlays hero + sticks on scroll) ── */
   .site-nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     display: flex;
     align-items: center;
@@ -689,6 +691,16 @@
 </head>
 <body>
 
+<!-- ═══ NAV (overlays hero, sticks on scroll) ═══ -->
+<nav class="site-nav">
+  <a href="/" class="nav-wordmark">Starsight Group</a>
+  <div class="nav-links">
+    <a href="/sprints.html">Sprints</a>
+    <a href="/about.html">About</a>
+    <a href="mailto:hello@starsightgroup.com" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
 <!-- ═══ HERO (first viewport) ═══ -->
 <section class="hero">
   <canvas id="sky"></canvas>
@@ -768,7 +780,7 @@
       <div class="divider-gem"></div>
     </div>
 
-    <div class="tagline">Embedded AI operator studio · Boston</div>
+    <div class="tagline">AI and data sprints. Fixed scope. Clean handoff.</div>
   </div>
 
   <div class="scroll-hint">
@@ -778,15 +790,6 @@
 
 <!-- ═══ BELOW THE FOLD ═══ -->
 <div class="below-fold" id="main">
-  <nav class="site-nav">
-    <a href="/" class="nav-wordmark">Starsight Group</a>
-    <div class="nav-links">
-      <a href="/sprints.html">Sprints</a>
-      <a href="/about.html">About</a>
-      <a href="mailto:hello@starsightgroup.com" class="nav-cta">Get in touch</a>
-    </div>
-  </nav>
-
   <main class="page">
 
     <!-- ── Intro ── -->

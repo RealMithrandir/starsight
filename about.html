@@ -276,7 +276,7 @@
   /* ── SPRINT TIERS ── */
   .tiers {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--rule);
     border: 1px solid var(--rule);
@@ -337,47 +337,6 @@
 
   .tier-link:hover { color: var(--ink); }
   .tier-link::after { content: ' \203A'; }
-
-  /* ── RETAINED SUPPORT ── */
-  .retained-block {
-    margin-top: 1.5rem;
-    border: 1px solid var(--rule);
-    background: var(--paper);
-    padding: 1.5rem 2rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .retained-text h3 {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    color: var(--ink);
-    margin-bottom: 0.3rem;
-  }
-
-  .retained-text p {
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  .retained-price {
-    text-align: right;
-  }
-
-  .retained-price .price {
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--gold);
-    font-weight: 500;
-  }
-
-  .retained-price .price-sub {
-    font-size: 0.8rem;
-    color: var(--ink-muted);
-  }
 
   /* ── WHAT THIS MEANS ── */
   .implications {
@@ -686,8 +645,6 @@
     .closing { grid-template-columns: 1fr; }
     .contact-block { text-align: left; }
     .background-block { padding: 2rem 1.5rem; }
-    .retained-block { grid-template-columns: 1fr; }
-    .retained-price { text-align: left; }
   }
 </style>
 </head>
@@ -711,14 +668,14 @@
   <!-- HEADER -->
   <header>
     <h1>Senior AI practitioners. Fixed-scope sprints. <em>You keep everything.</em></h1>
-    <p class="lede">Starsight Group runs time-boxed engagements that start with your problem and end with a working system, a clean handoff, and a team that can operate without us. No open-ended retainers. No scope creep. Fixed fee, fixed timeline.</p>
+    <p class="lede">Starsight Group runs time-boxed engagements that start with your problem and end with a working system, a clean handoff, and a team that can operate without us. Fixed fee, fixed timeline, no scope creep.</p>
 
     <div class="start-here">
       <div class="start-here-label">This is for you if</div>
       <ul class="start-here-items">
         <li>You need an AI or data system built in weeks, not months</li>
         <li>You have data accumulating but no strategy for using it</li>
-        <li>Your team needs to evaluate AI opportunities and vendor claims</li>
+        <li>Your team needs applied AI skills and a clear growth path for each person</li>
         <li>You want a working prototype before committing to a larger investment</li>
       </ul>
       <div class="start-here-cta">&rarr; If one of these is true, we should talk.</div>
@@ -751,7 +708,7 @@
 
   <div class="how-it-works">
     <div class="how-it-works-text">Every engagement is a sprint: fixed scope, fixed fee, fixed timeline. You see a working result before any longer commitment.</div>
-    <div class="how-it-works-sub">We scope the problem together, build the system, document everything, and hand it off. Your team owns the code, the data, and the capability. If you want continued support after a sprint, we offer retained hours at a monthly rate.</div>
+    <div class="how-it-works-sub">We scope the problem together, build the system, document everything, and hand it off. Your team owns the code, the data, and the capability. After a sprint, you own the output. If you want another sprint, that's a new engagement with its own scope and fee.</div>
   </div>
 
   <!-- SPRINT OFFERINGS -->
@@ -779,15 +736,8 @@
       <div class="tier-name">Capability Sprint</div>
       <div class="tier-price">$10&ndash;20K fixed fee</div>
       <div class="tier-duration">1&ndash;3 days</div>
-      <div class="tier-detail">Train your team to evaluate AI use cases, scope data projects, and interrogate vendor claims. Practitioner-led workshops, not certification theater. Remote or on-site.</div>
+      <div class="tier-detail">Train your team on applied AI and data skills. Every participant leaves with a personal growth plan. The team leaves with a shared practice playbook. Remote or on-site.</div>
       <a href="/sprint-capability.html" class="tier-link">Learn more</a>
-    </div>
-    <div class="tier">
-      <div class="tier-label">Ongoing</div>
-      <div class="tier-name">Retained Support</div>
-      <div class="tier-price">$5&ndash;12K / month</div>
-      <div class="tier-duration">Month-to-month</div>
-      <div class="tier-detail">Post-sprint support, architecture guidance, and on-call senior judgment for teams that want continued access. No long-term commitment required. Cancel anytime.</div>
     </div>
   </div>
 
@@ -847,7 +797,7 @@
   <div class="vision-close">
     <div class="vision-close-label">The bottom line</div>
     <div class="vision-close-text">Pick a sprint. See the result. <em>Then decide</em> if you want to keep working together.</div>
-    <div class="vision-close-sub">Every engagement is designed as a standalone deliverable. No retainer required to start. No commitment beyond the sprint you purchase.</div>
+    <div class="vision-close-sub">Every engagement is designed as a standalone deliverable. Fixed scope, fixed fee, clean handoff. No commitment beyond the sprint you purchase.</div>
   </div>
 
   <!-- CLOSING -->

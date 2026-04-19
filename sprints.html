@@ -219,39 +219,6 @@
     font-size: 0.85rem; color: rgba(216,225,240,0.65); line-height: 1.6;
   }
 
-  /* ── RETAINED SUPPORT ── */
-  .retained {
-    border: 1px solid var(--rule-gold);
-    background: var(--paper-warm);
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .retained h3 {
-    font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
-    color: var(--ink); margin-bottom: 0.4rem;
-  }
-
-  .retained p {
-    font-size: 0.9rem; color: var(--ink-soft); line-height: 1.65; max-width: 480px;
-  }
-
-  .retained-price {
-    text-align: right;
-  }
-
-  .retained-price .price {
-    font-family: var(--serif); font-size: 1.3rem; color: var(--gold); margin-bottom: 0.2rem;
-  }
-
-  .retained-price .price-sub {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
-    color: var(--ink-muted); text-transform: uppercase;
-  }
-
   /* ── CTA ── */
   .cta-section { text-align: center; padding: 4rem 0 5rem; }
   .cta-heading { font-family: var(--serif); font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 400; color: var(--ink); margin-bottom: 0.75rem; }
@@ -273,8 +240,6 @@
     .lifecycle { flex-direction: column; }
     .lifecycle-arrow { transform: rotate(90deg); padding: 0.25rem 0; }
     .diff-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .retained { grid-template-columns: 1fr; }
-    .retained-price { text-align: left; }
   }
 </style>
 </head>
@@ -325,7 +290,7 @@
     <div class="sprint-card">
       <div class="sprint-card-label">Train</div>
       <h3>Capability Sprint</h3>
-      <p>Train your team to evaluate AI use cases, scope projects, and interrogate vendor claims.</p>
+      <p>Train your team on applied AI and data skills. Every participant leaves with a personal growth plan.</p>
       <div class="sprint-card-meta">
         <span class="sprint-card-tag">1&ndash;3 days</span>
         <span class="sprint-card-tag">$10&ndash;20K</span>
@@ -352,23 +317,10 @@
     <div class="lifecycle-step">
       <div class="lifecycle-num">03</div>
       <div class="lifecycle-title">Next step</div>
-      <div class="lifecycle-body">Another sprint, retained support, or a clean handoff. Your call.</div>
+      <div class="lifecycle-body">Another sprint or a clean handoff. Your call.</div>
     </div>
   </div>
-  <p class="lifecycle-note">Every sprint is a standalone engagement. No retainer required to start.</p>
-
-  <!-- RETAINED SUPPORT -->
-  <div class="section-label">After the sprint</div>
-  <div class="retained">
-    <div>
-      <h3>Retained Support</h3>
-      <p>Post-sprint support, architecture guidance, and on-call senior judgment. Month-to-month, cancel anytime. For teams that want continued access after a sprint ships.</p>
-    </div>
-    <div class="retained-price">
-      <div class="price">$5&ndash;12K/mo</div>
-      <div class="price-sub">Month-to-month</div>
-    </div>
-  </div>
+  <p class="lifecycle-note">Every sprint is a standalone engagement. Fixed scope, fixed fee, clean handoff.</p>
 
 </main>
 

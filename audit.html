@@ -190,7 +190,7 @@
   /* ── SPEC STRIP ── */
   .spec-strip {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     border: 1px solid var(--rule-gold);
     background: var(--paper-warm);
     margin: 2rem 0 2rem;
@@ -357,6 +357,25 @@
   .flow-legend-item.technical {
     background: var(--paper-mid);
     border-left: 1px solid var(--rule);
+  }
+
+  /* ── PREKICKOFF CALLOUT ── */
+  .prekickoff {
+    background: var(--paper-warm);
+    border-left: 2px solid var(--gold);
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .prekickoff-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .prekickoff-body {
+    font-size: 0.9rem; color: var(--ink-soft); line-height: 1.7;
+    max-width: 640px; margin: 0;
   }
 
   /* ── FIT / NOT-FIT ── */
@@ -531,8 +550,13 @@
     .audit-hero { padding: 3rem 0 2.5rem; }
 
     .spec-strip { grid-template-columns: 1fr 1fr; }
-    .spec-cell:nth-child(2n) { border-right: none; }
-    .spec-cell:nth-child(1), .spec-cell:nth-child(2) { border-bottom: 1px solid var(--rule); }
+    .spec-cell { border-right: none; }
+    .spec-cell:nth-child(odd) { border-right: 1px solid var(--rule); }
+    .spec-cell:nth-child(1),
+    .spec-cell:nth-child(2),
+    .spec-cell:nth-child(3),
+    .spec-cell:nth-child(4) { border-bottom: 1px solid var(--rule); }
+    .spec-cell:nth-child(5) { grid-column: 1 / -1; border-right: none; }
 
     .badge-grid { grid-template-columns: 1fr; }
     .deliverables { grid-template-columns: 1fr; gap: 1rem; }
@@ -587,6 +611,10 @@
       <div class="spec-cell">
         <div class="spec-cell-label">Guarantee</div>
         <div class="spec-cell-value">Refund if no usable opportunity</div>
+      </div>
+      <div class="spec-cell">
+        <div class="spec-cell-label">Investment</div>
+        <div class="spec-cell-value">$2,500 fixed</div>
       </div>
     </div>
 
@@ -658,6 +686,10 @@
 
   <!-- TIMELINE -->
   <div class="section-label">How the week runs</div>
+  <div class="prekickoff">
+    <div class="prekickoff-label">Before kickoff</div>
+    <p class="prekickoff-body">The budget owner submits a 1-2 page current-state memo using a template we provide. This replaces the broader internal interview round, respects everyone's time, and means we hit Monday's kickoff with shared context.</p>
+  </div>
   <div class="flow">
     <div class="flow-step">
       <div class="flow-step-num">Mon</div>
@@ -668,7 +700,7 @@
     <div class="flow-step">
       <div class="flow-step-num">Tue</div>
       <div class="flow-step-title">Stakeholder interviews</div>
-      <div class="flow-step-duration">4 to 5 calls</div>
+      <div class="flow-step-duration">2 calls (30 min each)</div>
     </div>
     <div class="flow-arrow">&rsaquo;</div>
     <div class="flow-step technical">
@@ -730,12 +762,12 @@
   <div class="section-label">Common questions</div>
   <div class="faq">
     <div class="faq-item">
-      <div class="faq-q">Why isn't pricing on this page?</div>
-      <p class="faq-a">The audit is a fixed fee in a defined range, scaled to organization size and data complexity. We confirm the number on the intake call before you commit to anything. Quoting publicly would either underprice the larger engagements or overprice the smaller ones, and the goal of this page is to find the right fit, not the average one.</p>
+      <div class="faq-q">Why $2,500?</div>
+      <p class="faq-a">Because it's a productized engagement with a fixed scope, not a custom consulting arrangement. The price is designed to be a credit-card decision, not a procurement conversation. The audit is the start of a relationship, not the entire relationship. If you want deeper implementation work afterward, that's a separate Discovery Sprint conversation on its own SOW.</p>
     </div>
     <div class="faq-item">
       <div class="faq-q">What time commitment do you actually need from us?</div>
-      <p class="faq-a">About three hours total from the budget owner across the week: a 90-minute kickoff Monday, a 60-minute review Thursday, and a 90-minute readout Friday. Plus four to five 30-minute interviews with stakeholders we identify on Monday. Everything else is on us.</p>
+      <p class="faq-a">About three hours total from the budget owner across the week: a 90-minute kickoff Monday, a 60-minute review Thursday, and a 90-minute readout Friday. Plus two 30-minute interviews with stakeholders we identify on Monday, and a short pre-kickoff memo (1-2 pages, template provided). Everything else is on us.</p>
     </div>
     <div class="faq-item">
       <div class="faq-q">How do you handle confidentiality and NDA?</div>
@@ -747,7 +779,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">How does the refund guarantee work?</div>
-      <p class="faq-a">If by Friday's readout you don't see a usable opportunity worth pursuing in the next 90 days, the engagement is refundable in full. The guarantee exists because the offer stakes our money on the work being useful, not just thorough.</p>
+      <p class="faq-a">If at the Friday readout the deliverable doesn't include at least one opportunity you commit to pursuing in the next 90 days, the engagement is refundable in full. The guarantee exists because the offer stakes our money on the work being useful, not just thorough.</p>
     </div>
   </div>
 

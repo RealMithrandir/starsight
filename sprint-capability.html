@@ -493,5 +493,20 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 <noscript>
 <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9116130&fmt=gif" />
 </noscript>
+
+<!-- LinkedIn conversion: track Calendly clicks -->
+<script>
+(function() {
+  document.body.addEventListener('click', function(e) {
+    var a = e.target && e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.href || '';
+    if (href.indexOf('calendly.com') === -1) return;
+    if (typeof window.lintrk === 'function') {
+      try { window.lintrk('track', { conversion_id: 27295138 }); } catch(_) {}
+    }
+  }, false);
+})();
+</script>
 </body>
 </html>

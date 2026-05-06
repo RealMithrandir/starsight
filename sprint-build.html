@@ -170,7 +170,7 @@
   <div class="nav-links">
     <a href="/sprints.html">Sprints</a>
     <a href="/about.html">About</a>
-    <a href="mailto:hello@starsightgroup.com" class="nav-cta">Get in touch</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="nav-cta">Book a scoping call</a>
   </div>
 </nav>
 
@@ -184,7 +184,7 @@
     <h1>Build Sprint</h1>
     <div class="sprint-hero-subtitle">From defined use case to working system in 4&ndash;6 weeks.</div>
     <p class="sprint-hero-body">You know what you need built. We scope it tight, build it fast, and hand it off running in your environment. One problem, one data source, one deployable deliverable. No concepts, no decks, no prototypes that never ship.</p>
-    <a href="mailto:hello@starsightgroup.com" class="cta-btn">Book a scoping call</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="cta-btn">Book a scoping call</a>
   </div>
 
   <div class="section-label">Before our engagement</div>
@@ -375,13 +375,13 @@
     <div class="pricing-label">Fixed fee</div>
     <div class="pricing-amount">Starts at $25,000</div>
     <p class="pricing-detail">Price scales with system complexity and integration requirements. Simple single-source builds price near the entry point. Multi-system integrations, production ML pipelines, and larger deployments scope higher. Every engagement is a fixed fee agreed before kickoff. Includes 30-day post-handoff support. No hourly billing.</p>
-    <a href="mailto:hello@starsightgroup.com" class="cta-btn">Get a quote</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="cta-btn">Book a scoping call</a>
   </div>
 
   <section class="cta-section">
     <h2 class="cta-heading">Schedule a 15-minute scoping call.</h2>
     <p class="cta-sub">Tell us what you need built. We'll tell you if we can do it, how long it will take, and what it will cost.</p>
-    <a href="mailto:hello@starsightgroup.com" class="cta-btn">Get in touch</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="cta-btn">Book a scoping call</a>
     <a href="mailto:hello@starsightgroup.com" class="cta-email">hello@starsightgroup.com</a>
   </section>
 
@@ -447,6 +447,29 @@
   window.addEventListener('resize', () => { resize(); initStars(); });
 })();
 </script>
+<!-- UTM passthrough to Calendly -->
+<script>
+(function() {
+  try {
+    const allowed = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','gclid','li_fat_id'];
+    const incoming = new URLSearchParams(window.location.search);
+    const passthrough = new URLSearchParams();
+    allowed.forEach(k => {
+      const v = incoming.get(k);
+      if (v) passthrough.set(k, v);
+    });
+    if (![...passthrough].length) return;
+    document.querySelectorAll('a[href*="calendly.com"]').forEach(a => {
+      try {
+        const u = new URL(a.href);
+        passthrough.forEach((v, k) => u.searchParams.set(k, v));
+        a.href = u.toString();
+      } catch(e) {}
+    });
+  } catch(e) {}
+})();
+</script>
+
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
 _linkedin_partner_id = "9116130";

@@ -166,7 +166,7 @@
   <div class="nav-links">
     <a href="/sprints.html">Sprints</a>
     <a href="/about.html">About</a>
-    <a href="mailto:hello@starsightgroup.com" class="nav-cta">Get in touch</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="nav-cta">Book a scoping call</a>
   </div>
 </nav>
 
@@ -180,7 +180,7 @@
     <h1>Capability Sprint</h1>
     <div class="sprint-hero-subtitle">Train your team, and build a growth plan for every person.</div>
     <p class="sprint-hero-body">Not generic AI literacy. A practitioner-led sprint that maps your team's current AI and data skills, gives each person a personal growth plan, and sends everyone back to work with applied skills they can use on Monday.</p>
-    <a href="mailto:hello@starsightgroup.com" class="cta-btn">Book a workshop</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="cta-btn">Book a scoping call</a>
   </div>
 
   <div class="section-label">Before our engagement</div>
@@ -379,13 +379,13 @@
     <div class="pricing-label">Fixed fee</div>
     <div class="pricing-amount">$10,000 &ndash; $20,000</div>
     <p class="pricing-detail">Price depends on workshop duration (1&ndash;3 days), team size, and whether the engagement is remote or on-site. Includes preparation, facilitation, individual growth plans, team playbook, and follow-up checklist. Travel expenses billed separately for on-site engagements outside Boston.</p>
-    <a href="mailto:hello@starsightgroup.com" class="cta-btn">Get a quote</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="cta-btn">Book a scoping call</a>
   </div>
 
   <section class="cta-section">
     <h2 class="cta-heading">Schedule a 15-minute call.</h2>
     <p class="cta-sub">We'll help you figure out the right scope and format for your team.</p>
-    <a href="mailto:hello@starsightgroup.com" class="cta-btn">Get in touch</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="cta-btn">Book a scoping call</a>
     <a href="mailto:hello@starsightgroup.com" class="cta-email">hello@starsightgroup.com</a>
   </section>
 
@@ -451,6 +451,29 @@
   window.addEventListener('resize', () => { resize(); initStars(); });
 })();
 </script>
+<!-- UTM passthrough to Calendly -->
+<script>
+(function() {
+  try {
+    const allowed = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','gclid','li_fat_id'];
+    const incoming = new URLSearchParams(window.location.search);
+    const passthrough = new URLSearchParams();
+    allowed.forEach(k => {
+      const v = incoming.get(k);
+      if (v) passthrough.set(k, v);
+    });
+    if (![...passthrough].length) return;
+    document.querySelectorAll('a[href*="calendly.com"]').forEach(a => {
+      try {
+        const u = new URL(a.href);
+        passthrough.forEach((v, k) => u.searchParams.set(k, v));
+        a.href = u.toString();
+      } catch(e) {}
+    });
+  } catch(e) {}
+})();
+</script>
+
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
 _linkedin_partner_id = "9116130";

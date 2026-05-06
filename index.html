@@ -727,7 +727,7 @@
   <div class="nav-links">
     <a href="/sprints.html">Sprints</a>
     <a href="/about.html">About</a>
-    <a href="mailto:hello@starsightgroup.com" class="nav-cta">Get in touch</a>
+    <a href="https://calendly.com/philip-starsightgroup/30min" class="nav-cta">Book a scoping call</a>
   </div>
 </nav>
 
@@ -887,7 +887,7 @@
     <section class="cta-section">
       <h2 class="cta-heading">See results before you commit.</h2>
       <p class="cta-sub">Every sprint is designed as a standalone engagement. Fixed scope, fixed fee, clean handoff.</p>
-      <a href="mailto:hello@starsightgroup.com" class="cta-btn">Get in touch</a>
+      <a href="https://calendly.com/philip-starsightgroup/30min" class="cta-btn">Book a scoping call</a>
       <a href="mailto:hello@starsightgroup.com" class="cta-email">hello@starsightgroup.com</a>
     </section>
 
@@ -1133,6 +1133,29 @@ initStars();
 loop();
 window.addEventListener('resize', () => { resize(); initStars(); });
 </script>
+<!-- UTM passthrough to Calendly -->
+<script>
+(function() {
+  try {
+    const allowed = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','gclid','li_fat_id'];
+    const incoming = new URLSearchParams(window.location.search);
+    const passthrough = new URLSearchParams();
+    allowed.forEach(k => {
+      const v = incoming.get(k);
+      if (v) passthrough.set(k, v);
+    });
+    if (![...passthrough].length) return;
+    document.querySelectorAll('a[href*="calendly.com"]').forEach(a => {
+      try {
+        const u = new URL(a.href);
+        passthrough.forEach((v, k) => u.searchParams.set(k, v));
+        a.href = u.toString();
+      } catch(e) {}
+    });
+  } catch(e) {}
+})();
+</script>
+
 <!-- LinkedIn Insight Tag -->
 <script type="text/javascript">
 _linkedin_partner_id = "9116130";

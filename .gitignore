@@ -1,6 +1,11 @@
 # Claude Code local settings
 .claude/
 
+# Internal docs — keep OUT of this public, Pages-served repo.
+# (Pages would serve these at starsightgroup.com/<file>; STRATEGY.md is confidential.)
+CLAUDE.md
+STRATEGY.md
+
 # OS files
 .DS_Store
 Thumbs.db
